@@ -11,7 +11,7 @@ export default function Document() {
           rel="stylesheet"
         />
       </Head>
-      <body>
+      <body className="max-w-[80%] mx-auto">
         <Main />
         <NextScript />
       </body>
