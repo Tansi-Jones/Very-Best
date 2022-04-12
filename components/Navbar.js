@@ -21,7 +21,7 @@ export default function Navbar() {
         ))}
       </div>
       <div>
-        <button className="text-white border-2 border-yellow-500 transition ease-in duration-200 hover:bg-yellow-500 rounded-lg text-base md:text-lg font-normal px-6 py-2">
+        <button className="text-white border-2 border-Primary transition ease-in duration-200 hover:bg-Primary rounded-lg text-base md:text-lg font-normal px-6 py-2">
           Register
         </button>
       </div>
