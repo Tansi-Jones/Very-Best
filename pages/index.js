@@ -15,7 +15,7 @@ import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
 
 export default function Home() {
-  const [newsLetterMail, setNewsLetterMail] = useState("");
+  const [subscriberMail, setSubscriberMail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
@@ -31,7 +31,7 @@ export default function Home() {
 
     try {
       setIsSubmitting(true);
-      const { data } = await axios.post("/api/newsLetter", newsLetterMail);
+      const { data } = await axios.post("/api/newsLetter", { subscriberMail });
       toast(data);
       setIsSubmitting(false);
     } catch (error) {
@@ -76,7 +76,7 @@ export default function Home() {
                 // required
                 name="newsLetterMail"
                 onChange={(event) => {
-                  setNewsLetterMail(event.target.value);
+                  setSubscriberMail(event.target.value);
                 }}
                 id="newsletter"
                 placeholder="Subscribe to our NewsLetter "

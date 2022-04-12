@@ -1,11 +1,24 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import dbConnect from "../../lib/dbConnect";
+import Subscriber from "../../models/Subscriber";
 
 export default async function handler(req, res) {
-  const { newsLetterMail } = req.body;
+  const { subscriberMail } = req.body;
+  const { method } = req;
 
-  try {
-    return res.send("✅ Subscribed");
-  } catch (error) {
-    return res.send("❌ Failed to Subscribe");
+  await dbConnect();
+
+  switch (method) {
+    case "POST":
+      try {
+        const subscribers = await Subscriber.create(subscriberMail);
+        // res.status(201).json({ success: true });
+
+        res.send("✅ Subscribed");
+      } catch (error) {
+        // res.status(400).json({ success: false });
+        res.send("❌ Failed to Subscribe");
+      }
+    default:
+    // res.status(400).json({ success: false });
   }
 }
