@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Head from "next/head";
+import Meta from "../components/Meta";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Navbar from "../components/Navbar";
@@ -22,7 +22,7 @@ export default function Home() {
   }, []);
   return (
     <>
-      <Head title="Very Best Entertailment" />
+      <Meta title="Very Best Entertainment" />
 
       <div className="absolute left-[-220px] top-[-53px] w-[411px] h-[411px] bg-Primary rounder-full blur-[800px] opacity-90"></div>
 
