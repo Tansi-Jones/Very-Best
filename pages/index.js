@@ -11,6 +11,7 @@ import { GiCrownCoin } from "react-icons/gi";
 import { ImCoinYen, ImSpinner10 } from "react-icons/im";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function Home() {
   const [newsLetterMail, setNewsLetterMail] = useState("");
@@ -27,10 +28,15 @@ export default function Home() {
   const handleSubmit = (event) => {
     event.preventDefault();
     setIsSubmitting(true);
+    notify();
   };
+
+  const notify = () => toast("Here is your toast.");
 
   return (
     <>
+      <Toaster />
+
       <Meta title="Very Best Entertainment" />
 
       <div className="absolute left-[-220px] top-[-53px] w-[411px] h-[411px] bg-Primary rounder-full blur-[800px] opacity-90"></div>
@@ -57,7 +63,7 @@ export default function Home() {
             >
               <input
                 type="email"
-                required
+                // required
                 name="newsLetterMail"
                 onChange={(event) => {
                   setNewsLetterMail(event.target.value);
