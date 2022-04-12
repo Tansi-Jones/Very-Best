@@ -8,11 +8,14 @@ import { RiBitCoinLine, RiCopperCoinLine } from "react-icons/ri";
 import { FaViacoin } from "react-icons/fa";
 import { SiLitecoin, SiDogecoin } from "react-icons/si";
 import { GiCrownCoin } from "react-icons/gi";
-import { ImCoinYen } from "react-icons/im";
+import { ImCoinYen, ImSpinner10 } from "react-icons/im";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
 export default function Home() {
+  const [newsLetterMail, setNewsLetterMail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   useEffect(() => {
     // effect;
     Aos.init({ duration: 3000 });
@@ -20,6 +23,12 @@ export default function Home() {
       // cleanup;
     };
   }, []);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+  };
+
   return (
     <>
       <Meta title="Very Best Entertainment" />
@@ -44,19 +53,28 @@ export default function Home() {
             <form
               className="grid md:flex md:items-center max-w-[34rem] space-y-4 md:space-y-0 md:space-x-5"
               data-aos="slide-up"
+              onSubmit={handleSubmit}
             >
               <input
                 type="email"
+                required
                 name="newsLetterMail"
+                onChange={(event) => {
+                  setNewsLetterMail(event.target.value);
+                }}
                 id="newsletter"
                 placeholder="Subscribe to our NewsLetter "
                 className="flex-grow border border-Primary placeholder:w-full placeholder:font-light font-normal bg-transparent text-xl md:text-2xl px-4 py-3 outline-none"
               />
               <button
                 type="submit"
-                className="bg-Primary border flex items-center justify-center border-Primary transition ease-out duration-200 hover:bg-transparent text-4xl md:text-5xl text-white px-12 py-1 md:py-2 w-full md:w-auto"
+                className="bg-Primary border flex items-center justify-center border-Primary transition ease-out duration-200 hover:bg-transparent text-4xl md:text-[2.7rem] text-white px-12 py-1 md:py-2 w-full md:w-auto"
               >
-                <IoGameController />
+                {isSubmitting ? (
+                  <ImSpinner10 className="animate-spin" />
+                ) : (
+                  <IoGameController />
+                )}
               </button>
             </form>
 
