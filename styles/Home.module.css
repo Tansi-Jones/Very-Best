@@ -1,0 +1,7 @@
+.PS4 {
+  position: relative;
+  width: 796px;
+  height: 979px;
+  background: linear-gradient(90deg, #0c0c0c -8.15%, rgba(0, 0, 0, 0) 57.54%),
+    url(../public/assets/img/PS4.png);
+}

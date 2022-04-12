@@ -15,7 +15,7 @@ export default function Document() {
           rel="stylesheet"
         />
       </Head>
-      <body className="max-w-[80%] mx-auto relative bg-black text-white">
+      <body className="max-w-[90%] md:max-w-[80%] mx-auto relative bg-black text-white ">
         <Main />
         <NextScript />
       </body>

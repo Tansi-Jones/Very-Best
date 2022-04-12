@@ -10,3 +10,12 @@
   box-sizing: border-box;
   font-family: "Rubik", sans-serif;
 }
+
+::-webkit-scrollbar {
+  background-color: black;
+  width: 13px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #ffa503;
+  border-radius: 5px;
+}
