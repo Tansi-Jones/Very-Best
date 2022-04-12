@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
@@ -8,8 +9,17 @@ import { FaViacoin } from "react-icons/fa";
 import { SiLitecoin, SiDogecoin } from "react-icons/si";
 import { GiCrownCoin } from "react-icons/gi";
 import { ImCoinYen } from "react-icons/im";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 export default function Home() {
+  useEffect(() => {
+    // effect;
+    Aos.init({ duration: 3000 });
+    return () => {
+      // cleanup;
+    };
+  }, []);
   return (
     <>
       <Head title="Very Best Entertailment" />
@@ -23,12 +33,18 @@ export default function Home() {
       <main>
         <section className="grid h-screen grid-cols-1 lg:grid-cols-2 max-w-6xl mx-auto">
           <div className=" flex flex-col pt-48 md:pt-60 space-y-20">
-            <h1 className="text-3xl md:text-5xl text-white font-medium 2xl:font-semibold">
+            <h1
+              className="text-3xl md:text-5xl text-white font-medium 2xl:font-semibold"
+              data-aos="zoom-in-right"
+            >
               <span className="text-Primary">Join</span> the largest gaming
               community in Cyprus
             </h1>
 
-            <form className="grid md:flex md:items-center max-w-[34rem] space-y-4 md:space-y-0 md:space-x-5">
+            <form
+              className="grid md:flex md:items-center max-w-[34rem] space-y-4 md:space-y-0 md:space-x-5"
+              data-aos="slide-up"
+            >
               <input
                 type="email"
                 name="newsLetterMail"
@@ -44,7 +60,7 @@ export default function Home() {
               </button>
             </form>
 
-            <div className="space-y-5">
+            <div className="space-y-5" data-aos="slide-up">
               <h1 className="text-white text-xl md:text-3xl font-medium">
                 In Partnership with
               </h1>
@@ -74,7 +90,10 @@ export default function Home() {
             </div>
           </div>
 
-          <div className={`${styles.PS4} hidden lg:block`}></div>
+          <div
+            className={`${styles.PS4} hidden lg:block`}
+            data-aos="fade-up-right"
+          ></div>
         </section>
       </main>
     </>

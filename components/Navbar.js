@@ -13,6 +13,7 @@ export default function Navbar() {
             src="/very-best.png"
             alt="very best entertainment logo"
             layout="fill"
+            priority
           />
         </div>
         <div className="hidden lg:flex items-center justify-evenly space-x-20 text-white text-base md:text-lg lg:text-xl 2xl:text-2xl font-normal md:font-semibold">
