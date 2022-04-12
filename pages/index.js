@@ -12,6 +12,7 @@ import { ImCoinYen, ImSpinner10 } from "react-icons/im";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import toast, { Toaster } from "react-hot-toast";
+import axios from "axios";
 
 export default function Home() {
   const [newsLetterMail, setNewsLetterMail] = useState("");
@@ -25,10 +26,19 @@ export default function Home() {
     };
   }, []);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    setIsSubmitting(true);
-    notify();
+
+    try {
+      setIsSubmitting(true);
+      const { data } = await axios.post("/api/newsLetter", newsLetterMail);
+      toast(data);
+      setIsSubmitting(false);
+    } catch (error) {
+      setIsSubmitting(true);
+      toast.error(error.response.data);
+      setIsSubmitting(false);
+    }
   };
 
   const notify = () => toast("Here is your toast.");
