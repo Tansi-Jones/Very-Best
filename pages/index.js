@@ -22,7 +22,7 @@ export default function Home() {
 
       <main>
         <section className="grid h-screen grid-cols-1 lg:grid-cols-2 max-w-6xl mx-auto">
-          <div className=" flex flex-col pt-60 space-y-20">
+          <div className=" flex flex-col pt-48 md:pt-60 space-y-20">
             <h1 className="text-3xl md:text-5xl text-white font-medium 2xl:font-semibold">
               <span className="text-Primary">Join</span> the largest gaming
               community in Cyprus
