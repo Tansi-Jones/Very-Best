@@ -84,7 +84,7 @@ export default function Home() {
               />
               <button
                 type="submit"
-                className="bg-Primary border flex items-center justify-center border-Primary transition ease-out duration-200 hover:bg-transparent text-4xl md:text-[2.7rem] text-white px-12 py-1 md:py-2 w-full md:w-auto"
+                className="bg-Primary border outline-none flex items-center justify-center border-Primary transition ease-out duration-200 hover:bg-transparent text-4xl md:text-[2.7rem] text-white px-12 py-1 md:py-2 w-full md:w-auto"
               >
                 {isSubmitting ? (
                   <ImSpinner10 className="animate-spin" />
